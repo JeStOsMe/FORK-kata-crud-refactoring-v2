@@ -134,6 +134,7 @@ public class ToDoListService {
     public void deleteATodoById(Long id){
         Optional<Todo> todo = todoRepo.findById(id);
 
+        //Método con problemas de llave foránea.
         if (todo.isPresent()){
             Todo _todo = todo.get();
             todoRepo.delete(_todo);
